@@ -7,22 +7,22 @@ const Basket = (props) => {
   const [basket, setBasket] = useContext(BasketContext)
 
   const goToHome = () => {
-    console.log(props)
+    // console.log(props)
     props.navigation.navigate("Home")
   }
 
   return (
     <View style={styles.container}>
         <Text style={styles.title}>Panier</Text>
-        <TouchableOpacity
+        {/* <TouchableOpacity
                 style={styles.link}
                 onPress={()=>{
                     goToHome()
                 }}
             >
               <Text style={styles.linkText}>Retour à l'accueil</Text>
-        </TouchableOpacity>
-        { basket.length > 0 ? <ScrollView>
+        </TouchableOpacity> */}
+        { basket.length > 0 ? <ScrollView style={styles.result}>
           { basket.map((product) =>{
             return <BasketItem key={product.id} product={product}/>
           })
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
       flex: 1,
       padding: 25,
       paddingTop: 100,
-      backgroundColor: "green",
+      backgroundColor: "whitesmoke",
       justifyContent: "flex-start",
       alignItems: "center"
   },
   title: {
-      color: "white",
+      color: "black",
       fontSize: 32,
       marginBottom: 50
   },
@@ -65,6 +65,14 @@ const styles = StyleSheet.create({
   linkText: {
       color: "white",
       fontSize: 20,
+  },
+  result: {
+    backgroundColor: "white",
+    textAlign: "center",
+    paddingLeft: 5,
+    paddingRight: 5,
+    marginTop: 20,
+    borderRadius: 2,
   }
 })
 export default Basket

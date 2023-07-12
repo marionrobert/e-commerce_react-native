@@ -30,15 +30,15 @@ const Home = (props) => {
 
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Accueil</Text>
-        <TouchableOpacity
+        <Text style={styles.title}>Tous nos produits</Text>
+        {/* <TouchableOpacity
                 style={styles.link}
                 onPress={()=>{
                     goToBasket()
                 }}
             >
-              <Text style={styles.linkText}>Voir mon panier</Text>
-        </TouchableOpacity>
+          <Text style={styles.linkText}>Voir mon panier</Text>
+        </TouchableOpacity> */}
         {products.length > 0 && <ScrollView style={styles.result}>
               {products.map((product)=>{
                 return oneProduct(product)
@@ -55,41 +55,40 @@ const styles = StyleSheet.create({
       flex: 1,
       padding: 25,
       paddingTop: 100,
-      backgroundColor: "green",
+      backgroundColor: "whitesmoke",
       justifyContent: "flex-start",
       alignItems: "center"
   },
   title: {
-      color: "white",
+      color: "black",
       fontSize: 32,
-      marginBottom: 50
+      marginBottom: 30
   },
   text: {
       color: "black",
       fontSize: 22,
   },
   link: {
-      marginVertical: 25,
-      borderColor: "white",
+      marginVertical: 15,
+      borderColor: "black",
       borderTopWidth: 2,
       borderLeftWidth: 2,
       borderRightWidth: 2,
       borderBottomWidth: 2,
-      padding: 10
+      padding: 10,
+      borderRadius: 5
   },
   linkText: {
-      color: "white",
+      color: "black",
       fontSize: 20,
   },
   result: {
     backgroundColor: "white",
     textAlign: "center",
-    padding: 25,
-    marginTop: 25,
-    height: 200
-  },
-  product: {
-    margin: 20,
+    paddingLeft: 5,
+    paddingRight: 5,
+    marginTop: 20,
+    borderRadius: 2,
   }
 
 })
